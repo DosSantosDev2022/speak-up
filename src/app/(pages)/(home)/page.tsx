@@ -1,9 +1,12 @@
 // app/page.tsx
 
+// biome-ignore assist/source/organizeImports: <explanation>
 import { CirclePlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button, WaveBackground } from "@/components"; // Importe o componente de onda
+import { advantages } from "@/config/home-page";
+import { AdvantageCard } from "@/components/pages/home/Advantage-card";
 
 export default function HomePage() {
 	return (
@@ -124,17 +127,44 @@ export default function HomePage() {
 				/>
 			</section>
 
-			{/* Exemplo de outras seções da página, fora da Hero */}
-			<section className="bg-[var(--background)] text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<h2 className="text-3xl font-bold text-center mb-8">
-					Nossos Diferenciais
-				</h2>
-				<p className="max-w-3xl mx-auto text-center">
-					Descubra os pilares que tornam a SpeakUp a escolha
-					ideal para sua jornada no inglês. Metodologia
-					inovadora, professores experientes e uma
-					comunidade engajada esperam por você.
-				</p>
+			{/* Seção vantagens exclusivas */}
+			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+					<div className="w-full md:w-4xl space-y-4 text-center md:text-left">
+						<h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight">
+							Descubra as{" "}
+							<span className="font-bold text-primary">
+								vantagens
+							</span>{" "}
+							exclusivas do SpeakUp
+						</h2>
+						<Link
+							className="inline-block border border-secondary text-secondary rounded-4xl px-4 py-2 hover:bg-secondary hover:text-primary-foreground transition-colors duration-300"
+							href={"/#"}
+						>
+							Ver todas as vantagens
+						</Link>
+					</div>
+
+					<div className="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
+						<p className="text-lg sm:text-xl leading-relaxed">
+							Transforme sua jornada de aprendizado com
+							recursos de primeira classe e suporte
+							personalizado.
+						</p>
+					</div>
+				</div>
+
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+					{advantages.map((advantage) => (
+						<AdvantageCard
+							key={advantage.id}
+							icon={advantage.icon}
+							title={advantage.title}
+							description={advantage.description}
+						/>
+					))}
+				</div>
 			</section>
 		</>
 	);
