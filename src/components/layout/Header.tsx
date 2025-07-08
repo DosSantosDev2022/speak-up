@@ -15,7 +15,7 @@ import Link from "next/link";
 const Header = () => {
 	const navLinks = [
 		{ href: "/", label: "Home" },
-		{ href: "/sobre", label: "Sobre" },
+		{ href: "/about", label: "Sobre" },
 		{ href: "/cursos", label: "Cursos" },
 		{ href: "/plataforma", label: "Plataforma" },
 		{ href: "/blog", label: "Blog" },
