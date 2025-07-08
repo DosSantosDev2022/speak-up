@@ -1,0 +1,163 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Button, WaveBackground } from "@/components/";
+
+export default function CursosPage() {
+	// Dados para os cards de cursos
+	const courses = [
+		{
+			id: 1,
+			title: "Inglês para Crianças",
+			description:
+				"Aulas lúdicas e interativas que transformam o aprendizado em brincadeira. Seu filho vai desenvolver as bases do inglês de forma divertida e natural.",
+			imageSrc: "/images/courses/kids-course.webp", // Crie estas imagens
+			linkHref: "/cursos/criancas",
+		},
+		{
+			id: 2,
+			title: "Inglês para Adolescentes",
+			description:
+				"Conteúdo dinâmico e relevante, focado em comunicação para o dia a dia e preparação para desafios acadêmicos e sociais.",
+			imageSrc: "/images/courses/teens-course.webp",
+			linkHref: "/cursos/adolescentes",
+		},
+		{
+			id: 3,
+			title: "Inglês para Adultos",
+			description:
+				"Cursos flexíveis e personalizados para suas necessidades. Ideal para carreira, viagens ou desenvolvimento pessoal, com foco na fluência.",
+			imageSrc: "/images/courses/adults-course.webp",
+			linkHref: "/cursos/adultos",
+		},
+		{
+			id: 4,
+			title: "Preparatório TOEFL/IELTS",
+			description:
+				"Programas intensivos e focados para você alcançar a pontuação desejada nos exames de proficiência, abrindo portas para universidades e oportunidades internacionais.",
+			imageSrc: "/images/courses/toefl-ielts-course.webp",
+			linkHref: "/cursos/toefl-ielts",
+		},
+		{
+			id: 5,
+			title: "Inglês para Negócios",
+			description:
+				"Aprimore suas habilidades de comunicação para o ambiente corporativo. Foco em reuniões, apresentações, negociações e e-mails profissionais.",
+			imageSrc: "/images/courses/business-course.webp",
+			linkHref: "/cursos/negocios",
+		},
+		{
+			id: 6,
+			title: "Inglês para Viagem",
+			description:
+				"Prepare-se para suas aventuras internacionais! Aprenda frases essenciais, vocabulário de viagem e dicas culturais para explorar o mundo com confiança.",
+			imageSrc: "/images/courses/travel-course.webp",
+			linkHref: "/cursos/viagem",
+		},
+	];
+
+	return (
+		<>
+			{/* Seção Hero "Nossos Cursos" */}
+			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[60vh]">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 z-10">
+					<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
+						Explore Nossos{" "}
+						<span className="text-secondary-foreground">
+							Cursos
+						</span>
+					</h1>
+					<p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
+						Encontre o caminho ideal para alcançar a
+						fluência em inglês, com opções pensadas para
+						cada objetivo e idade.
+					</p>
+				</div>
+				<WaveBackground
+					className="z-0"
+					fillColor="fill-background"
+				/>
+			</section>
+
+			{/* Seção de Visão Geral dos Cursos (usando cards) */}
+			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28">
+					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12">
+						Descubra qual curso é{" "}
+						<span className="text-primary">para você!</span>
+					</h2>
+
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+						{courses.map((course) => (
+							<div
+								key={course.id}
+								className="flex flex-col bg-card rounded-lg shadow-lg overflow-hidden h-full transform transition-transform duration-300 hover:scale-105"
+							>
+								{/* Imagem do Curso */}
+								<div className="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden">
+									<Image
+										src={course.imageSrc}
+										alt={course.title}
+										fill
+										style={{ objectFit: "cover" }}
+									/>
+								</div>
+
+								{/* Conteúdo do Card */}
+								<div className="p-6 flex flex-col justify-between flex-grow">
+									<div>
+										<h3 className="text-2xl font-bold text-card-foreground mb-3 leading-tight">
+											{course.title}
+										</h3>
+										<p className="text-muted-foreground text-base mb-4 line-clamp-4">
+											{course.description}
+										</p>
+									</div>
+									{/* Botão de Link */}
+									<Button
+										asChild
+										className="w-full mt-4 rounded-full"
+									>
+										<Link href={course.linkHref}>
+											Saber Mais
+										</Link>
+									</Button>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Seção Chamada para Ação / FAQ (Exemplo) */}
+			<section className="bg-muted text-foreground py-20 px-4 md:px-8 lg:px-16 text-center">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28">
+					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
+						Pronto para começar?
+					</h2>
+					<p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10">
+						Se ainda tem dúvidas sobre qual curso escolher,
+						fale com um de nossos consultores ou confira
+						nossa seção de Perguntas Frequentes.
+					</p>
+					<div className="flex flex-col sm:flex-row justify-center gap-4">
+						<Button
+							size="lg"
+							className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+							asChild
+						>
+							<Link href="/contato">Fale Conosco</Link>
+						</Button>
+						<Button
+							size="lg"
+							variant="secondary"
+							className="rounded-full"
+							asChild
+						>
+							<Link href="/faq">Perguntas Frequentes</Link>
+						</Button>
+					</div>
+				</div>
+			</section>
+		</>
+	);
+}
