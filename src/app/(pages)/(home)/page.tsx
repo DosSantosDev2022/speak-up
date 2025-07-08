@@ -4,7 +4,11 @@
 import { CirclePlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, WaveBackground } from "@/components"; // Importe o componente de onda
+import {
+	Button,
+	Input,
+	WaveBackground,
+} from "@/components"; // Importe o componente de onda
 import {
 	advantages,
 	audienceCategories,
@@ -18,9 +22,9 @@ export default function HomePage() {
 	return (
 		<>
 			{/* Seção Hero - Contêiner principal com background e onda */}
-			<section className="relative pt-4 pb-4 md:pb-20 bg-primary text-primary-foreground overflow-hidden min-h-[calc(100vh - var(--header-total-height))] flex items-center justify-center">
+			<section className="relative pt-4 pb-4 md:pb-20 bg-gradient-to-b from-primary to-secondary/70  text-primary-foreground overflow-hidden min-h-[calc(100vh - var(--header-total-height))] flex items-center justify-center">
 				{/* CONTAINER para alinhar o conteúdo da Hero com o Header */}
-				<div className="container mx-auto mb-12 px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
+				<div className="container mx-auto mb-6 px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16">
 					{/* Bloco de Conteúdo (Título, Descrição, Botões, Estatísticas) */}
 					<div className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10">
 						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
@@ -39,15 +43,14 @@ export default function HomePage() {
 						<div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
 							<Button
 								size={"lg"}
-								className="bg-muted text-foreground hover:bg-secondary w-full rounded-4xl sm:w-auto"
+								className="bg-muted text-foreground w-full rounded-4xl sm:w-auto hover:scale-95 hover:bg-muted"
 								asChild
 							>
 								<Link href="/#">Pré-Matrícula</Link>
 							</Button>
 							<Button
 								size={"lg"}
-								variant="secondary"
-								className="w-full sm:w-auto rounded-4xl"
+								className="bg-muted text-foreground w-full rounded-4xl sm:w-auto hover:scale-95 hover:bg-muted"
 								asChild
 							>
 								<Link
@@ -105,7 +108,7 @@ export default function HomePage() {
 					</div>
 
 					{/* Imagem do estudante */}
-					<div className="relative bottom-0 right-0 w-[80%] md:w-[40%] lg:w-[35%] xl:w-[30%] h-auto z-10">
+					<div className="relative lg:-bottom-6 -bottom-12 right-0 w-[80%] md:w-[40%] lg:w-[35%] xl:w-[30%] h-auto ">
 						<Image
 							src={"/images/student-hero.webp"}
 							alt="Imagem de estudante de inglês"
@@ -113,15 +116,6 @@ export default function HomePage() {
 							height={700}
 							quality={100}
 							className="w-full h-auto object-cover"
-						/>
-						{/* Elemento de sobreposição com gradiente para o efeito de "desaparecer" */}
-						<div
-							className="absolute inset-x-0 bottom-0 h-18"
-							style={{
-								background:
-									"linear-gradient(to top, var(--primary) 0%, transparent 100%)",
-							}}
-							aria-hidden="true"
 						/>
 					</div>
 				</div>
@@ -139,13 +133,13 @@ export default function HomePage() {
 					<div className="w-full md:w-4xl space-y-4 text-center md:text-left">
 						<h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight">
 							Descubra as{" "}
-							<span className="font-bold text-primary">
+							<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
 								vantagens
 							</span>{" "}
 							exclusivas do SpeakUp
 						</h2>
 						<Link
-							className="inline-block border border-secondary text-secondary rounded-4xl px-4 py-2 hover:bg-secondary hover:text-primary-foreground transition-colors duration-300"
+							className="inline-block border border-secondary text-secondary rounded-4xl px-4 py-2 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300"
 							href={"/#"}
 						>
 							Ver todas as vantagens
@@ -180,7 +174,9 @@ export default function HomePage() {
 					<div className="max-w-2xl w-full text-center md:text-left">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
 							Encontre o melhor{" "}
-							<span className="text-primary">caminho</span>{" "}
+							<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
+								caminho
+							</span>{" "}
 							para aprender inglês!
 						</h2>
 					</div>
@@ -188,7 +184,7 @@ export default function HomePage() {
 					{/* Botão "Saiba mais!" - Aparece segundo em mobile, alinhado à direita em desktop */}
 					<div className="w-full md:w-auto flex justify-center md:justify-end">
 						<Link
-							className="inline-block border border-secondary text-secondary rounded-4xl px-6 py-3 hover:bg-secondary hover:text-primary-foreground transition-colors duration-300 text-lg"
+							className="inline-block border border-secondary text-secondary rounded-4xl px-6 py-3 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300 text-lg"
 							href={"/#"}
 						>
 							Saiba mais!
@@ -217,7 +213,7 @@ export default function HomePage() {
 				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
 					{/* Bloco de Título e Texto */}
 					<div className="w-full lg:w-1/3 text-center lg:text-left space-y-4">
-						<h2 className="text-base font-semibold text-primary uppercase tracking-wider">
+						<h2 className="text-base font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent uppercase tracking-wider">
 							FEEDBACK
 						</h2>
 						<p className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
@@ -254,6 +250,43 @@ export default function HomePage() {
 								</div>
 							))}
 						</FeedbackCarousel>
+					</div>
+				</div>
+			</section>
+
+			{/* Seção newslatters */}
+			<section className="container mx-auto py-20 px-4 md:px-8 lg:px-16  text-primary-foreground">
+				<div className=" px-4 border rounded-4xl bg-gradient-to-b from-primary to-secondary/70 sm:px-6 md:px-8 lg:px-28 py-6 flex flex-col items-center justify-between gap-12">
+					{/* Bloco de Texto (Título e Descrição) */}
+					<div className="w-full flex flex-col items-center text-center space-y-4">
+						<h3 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
+							Inscreva-se para receber{" "}
+							<span className="text-accent">
+								ofertas, descontos, atualizações
+							</span>{" "}
+							e muito mais!
+						</h3>
+						<p className="text-base sm:text-lg max-w-xl leading-relaxed">
+							Inscreva-se em nossa newsletter e tenha acesso
+							exclusivo a conteúdos educacionais, dicas de
+							aprendizado de idiomas, atualizações sobre
+							novos cursos e promoções.
+						</p>
+					</div>
+
+					{/* Formulário de Inscrição */}
+					<div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 lg:mt-0 max-w-md mx-auto">
+						<Input
+							type="email"
+							placeholder="Seu melhor e-mail"
+							className="flex-grow rounded-lg h-12 px-6 py-3 focus:ring-2 focus:ring-secondary focus:border-transparent text-foreground bg-background"
+						/>
+						<Button
+							size="lg"
+							className="w-full sm:w-auto rounded-lg h-12 bg-muted text-muted-foreground hover:bg-muted hover:scale-95"
+						>
+							Inscreva-se
+						</Button>
 					</div>
 				</div>
 			</section>

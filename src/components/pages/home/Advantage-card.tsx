@@ -14,7 +14,7 @@ const AdvantageCard = ({
 	return (
 		<div className="flex items-start gap-4 p-6 bg-card rounded-lg shadow-sm">
 			{/* Contêiner do Ícone */}
-			<div className="flex-shrink-0 p-3 rounded-full bg-secondary text-primary-foreground">
+			<div className="flex-shrink-0 p-3 rounded-full bg-gradient-to-b to-primary from-secondary text-primary-foreground">
 				<Icon size={28} />{" "}
 				{/* Renderiza o ícone passado como prop */}
 			</div>

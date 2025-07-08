@@ -41,7 +41,7 @@ const AudienceCard = ({
 				{/* Botão de Link */}
 				<Button
 					asChild
-					className="w-full mt-4 rounded-full"
+					className="w-full mt-4 rounded-full bg-gradient-to-b to-primary from-secondary/70 hover:scale-95 duration-300"
 				>
 					<Link href={linkHref}>Saiba mais</Link>
 				</Button>

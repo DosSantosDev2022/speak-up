@@ -1,6 +1,8 @@
 "use client"; // Adicione esta diretiva no topo do arquivo se este componente usar useState/useEffect ou outros hooks do React, pois é um componente cliente.
 
+import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
+
 import type { CarouselApi } from "@/components"; // Importe o tipo CarouselApi
 import {
 	Carousel,
@@ -36,6 +38,7 @@ export function FeedbackCarousel({
 					align: "start", // Alinha os itens ao início do contêiner do carrossel
 					loop: true, // Permite que o carrossel seja infinito
 				}}
+				plugins={[Autoplay({ delay: 3000 })]}
 				className="w-full max-w-4xl mx-auto" // Adiciona largura e centraliza o carrossel
 			>
 				<CarouselContent>
