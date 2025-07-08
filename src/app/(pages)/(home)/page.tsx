@@ -5,8 +5,12 @@ import { CirclePlay } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button, WaveBackground } from "@/components"; // Importe o componente de onda
-import { advantages } from "@/config/home-page";
+import {
+	advantages,
+	audienceCategories,
+} from "@/config/home-page";
 import { AdvantageCard } from "@/components/pages/home/Advantage-card";
+import { AudienceCard } from "@/components/pages/home/Audience-card";
 
 export default function HomePage() {
 	return (
@@ -164,6 +168,44 @@ export default function HomePage() {
 							description={advantage.description}
 						/>
 					))}
+				</div>
+			</section>
+
+			{/* Seção "Encontre o melhor caminho para aprender inglês!" */}
+			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+					{/* Título - Aparece primeiro em mobile */}
+					<div className="max-w-2xl w-full text-center md:text-left">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
+							Encontre o melhor{" "}
+							<span className="text-primary">caminho</span>{" "}
+							para aprender inglês!
+						</h2>
+					</div>
+
+					{/* Botão "Saiba mais!" - Aparece segundo em mobile, alinhado à direita em desktop */}
+					<div className="w-full md:w-auto flex justify-center md:justify-end">
+						<Link
+							className="inline-block border border-secondary text-secondary rounded-4xl px-6 py-3 hover:bg-secondary hover:text-primary-foreground transition-colors duration-300 text-lg"
+							href={"/#"}
+						>
+							Saiba mais!
+						</Link>
+					</div>
+				</div>
+
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 mt-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+						{audienceCategories.map((audience) => (
+							<AudienceCard
+								key={audience.title}
+								imageSrc={audience.imageSrc}
+								title={audience.title}
+								description={audience.description}
+								linkHref={audience.linkHref}
+							/>
+						))}
+					</div>
 				</div>
 			</section>
 		</>

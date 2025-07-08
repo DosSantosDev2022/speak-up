@@ -52,3 +52,34 @@ export const advantages = [
 			"Cursos específicos para você se preparar e obter sucesso nos exames de proficiência.",
 	},
 ];
+
+export const audienceCategories = [
+	{
+		imageSrc: "/images/infantil.webp", // Ajuste os caminhos das imagens
+		title: "Público Infantil",
+		description:
+			"Aulas lúdicas e interativas, perfeitas para as crianças darem os primeiros passos no inglês de forma divertida e eficaz.",
+		linkHref: "#",
+	},
+	{
+		imageSrc: "/images/preadolescente.webp",
+		title: "Pré-adolescente",
+		description:
+			"Conteúdo dinâmico e relevante para pré-adolescentes, focando em comunicação e desafios apropriados para a idade.",
+		linkHref: "#",
+	},
+	{
+		imageSrc: "/images/adolescente.webp",
+		title: "Adolescente",
+		description:
+			"Metodologia engajadora para adolescentes, preparando-os para o mundo acadêmico e social com inglês fluente.",
+		linkHref: "#",
+	},
+	{
+		imageSrc: "/images/adulto.webp",
+		title: "Adulto",
+		description:
+			"Cursos flexíveis e focados em resultados para adultos, seja para carreira, viagens ou desenvolvimento pessoal.",
+		linkHref: "#",
+	},
+];
