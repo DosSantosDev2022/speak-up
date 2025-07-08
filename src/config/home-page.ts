@@ -83,3 +83,41 @@ export const audienceCategories = [
 		linkHref: "#",
 	},
 ];
+
+export const feedbackData = [
+	{
+		id: 1,
+		name: "Ana Clara S.",
+		avatar: "/images/avatar-ana.webp", // Crie imagens de avatar na sua pasta public/images
+		text: "A SpeakUp revolucionou meu aprendizado de inglês! As aulas são super dinâmicas e o suporte da IA é incrível. Sinto que meu inglês evoluiu muito rápido.",
+		rating: 5,
+	},
+	{
+		id: 2,
+		name: "João Pedro L.",
+		avatar: "/images/avatar-joao.webp",
+		text: "Sempre tive dificuldade com inglês, mas com a flexibilidade de horários da SpeakUp, consigo estudar no meu ritmo. Os professores nativos fazem toda a diferença na pronúncia!",
+		rating: 4,
+	},
+	{
+		id: 3,
+		name: "Maria Eduarda F.",
+		avatar: "/images/avatar-maria.webp",
+		text: "Preparei-me para o TOEFL com a SpeakUp e passei! O material é excelente e o foco em conversação me deu muita confiança. Recomendo a todos!",
+		rating: 5,
+	},
+	{
+		id: 4,
+		name: "Carlos Alberto V.",
+		avatar: "/images/avatar-carlos.webp",
+		text: "As ferramentas de IA para correção são um diferencial. É como ter um professor particular 24h por dia. Meu vocabulário e gramática melhoraram drasticamente.",
+		rating: 5,
+	},
+	{
+		id: 5,
+		name: "Sophia M.",
+		avatar: "/images/avatar-sophia.webp",
+		text: "Comecei a SpeakUp bem nova e me divirto aprendendo! As atividades são muito legais e interativas. É o melhor jeito de aprender inglês!",
+		rating: 5,
+	},
+];

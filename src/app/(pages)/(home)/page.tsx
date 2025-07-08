@@ -8,9 +8,11 @@ import { Button, WaveBackground } from "@/components"; // Importe o componente d
 import {
 	advantages,
 	audienceCategories,
+	feedbackData,
 } from "@/config/home-page";
 import { AdvantageCard } from "@/components/pages/home/Advantage-card";
 import { AudienceCard } from "@/components/pages/home/Audience-card";
+import { FeedbackCarousel } from "@/components/pages/home/Feedback-carousel";
 
 export default function HomePage() {
 	return (
@@ -120,7 +122,7 @@ export default function HomePage() {
 									"linear-gradient(to top, var(--primary) 0%, transparent 100%)",
 							}}
 							aria-hidden="true"
-						></div>
+						/>
 					</div>
 				</div>
 
@@ -205,6 +207,53 @@ export default function HomePage() {
 								linkHref={audience.linkHref}
 							/>
 						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Seção plataforma SpeakUp */}
+
+			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
+					{/* Bloco de Título e Texto */}
+					<div className="w-full lg:w-1/3 text-center lg:text-left space-y-4">
+						<h2 className="text-base font-semibold text-primary uppercase tracking-wider">
+							FEEDBACK
+						</h2>
+						<p className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+							Veja o que nossos estudantes estão achando do
+							SpeakUp!
+						</p>
+					</div>
+
+					{/* Carrossel de Feedbacks */}
+					<div className="w-full lg:w-2/3">
+						<FeedbackCarousel>
+							{feedbackData.map((feedback) => (
+								<div
+									key={feedback.id}
+									className="bg-card p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+								>
+									<Image
+										src={feedback.avatar}
+										alt={feedback.name}
+										width={80}
+										height={80}
+										className="rounded-full mb-4 object-cover"
+									/>
+									<p className="text-lg font-semibold text-card-foreground">
+										{feedback.name}
+									</p>
+									<div className="text-yellow-400 text-xl my-2">
+										{"★".repeat(feedback.rating)}
+										{"☆".repeat(5 - feedback.rating)}
+									</div>
+									<p className="text-muted-foreground line-clamp-4 mt-2">
+										"{feedback.text}"
+									</p>
+								</div>
+							))}
+						</FeedbackCarousel>
 					</div>
 				</div>
 			</section>

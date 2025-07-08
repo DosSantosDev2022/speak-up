@@ -5,4 +5,5 @@ export * from "./global/Wave-background";
 export * from "./layout/Header";
 /* Componentes de UI */
 export * from "./ui/Button";
+export * from "./ui/carousel";
 export * from "./ui/Sheet";
