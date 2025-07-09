@@ -1,23 +1,24 @@
-import { TeamMembers, WaveBackground } from "@/components";
+import {
+	Container,
+	TeamMembers,
+	WaveBackground,
+} from "@/components";
 
 export default function AboutPage() {
 	return (
 		<>
 			{/* Seção Hero "Sobre Nós" */}
-			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[60vh]">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 z-10">
+			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[70vh]">
+				<Container className="z-10">
 					<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-7xl mb-4">
-						Sobre a{" "}
-						<span className="text-secondary-foreground">
-							SpeakUp
-						</span>
+						Sobre a SpeakUp
 					</h1>
 					<p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
 						Nossa paixão é transformar vidas através do
 						aprendizado de inglês, oferecendo uma educação
 						inovadora e acessível para todos.
 					</p>
-				</div>
+				</Container>
 				<WaveBackground
 					className="z-0"
 					fillColor="fill-background"
@@ -25,8 +26,8 @@ export default function AboutPage() {
 			</section>
 
 			{/* Seção Nossa Missão e Visão */}
-			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+			<section className="py-20 px-4 md:px-8 lg:px-16">
+				<Container className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
 					<div className="w-full md:w-1/2 text-center">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
 							Nossa{" "}
@@ -58,12 +59,12 @@ export default function AboutPage() {
 							em um mundo conectado.
 						</p>
 					</div>
-				</div>
+				</Container>
 			</section>
 
 			{/* Seção Nossa História (Exemplo de Timeline simplificada) */}
-			<section className="bg-muted text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 text-center">
+			<section className="bg-muted py-20 px-4 md:px-8 lg:px-0">
+				<Container className="text-center">
 					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12">
 						Nossa{" "}
 						<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
@@ -140,12 +141,12 @@ export default function AboutPage() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</Container>
 			</section>
 
 			{/* Seção Conheça Nossa Equipe (Exemplo de Grid de Fotos) */}
-			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 text-center">
+			<section className="py-20 px-4 md:px-8 lg:px-16">
+				<Container className="text-center">
 					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12">
 						Conheça Nossa{" "}
 						<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
@@ -155,7 +156,7 @@ export default function AboutPage() {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 						<TeamMembers />
 					</div>
-				</div>
+				</Container>
 			</section>
 		</>
 	);

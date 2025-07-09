@@ -1,26 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button, WaveBackground } from "@/components/";
+import {
+	Button,
+	Container,
+	WaveBackground,
+} from "@/components/";
 import { courses } from "@/config/courses";
 
 export default function CursosPage() {
 	return (
 		<>
 			{/* Seção Hero "Nossos Cursos" */}
-			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[60vh]">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 z-10">
+			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[70vh]">
+				<Container className="z-10">
 					<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
-						Explore Nossos{" "}
-						<span className="text-secondary-foreground">
-							Cursos
-						</span>
+						Explore Nossos Cursos
 					</h1>
 					<p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
 						Encontre o caminho ideal para alcançar a
 						fluência em inglês, com opções pensadas para
 						cada objetivo e idade.
 					</p>
-				</div>
+				</Container>
 				<WaveBackground
 					className="z-0"
 					fillColor="fill-background"
@@ -28,8 +29,8 @@ export default function CursosPage() {
 			</section>
 
 			{/* Seção de Visão Geral dos Cursos (usando cards) */}
-			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28">
+			<section className="py-20 px-4 md:px-8 lg:px-16">
+				<Container className="">
 					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12">
 						Descubra qual curso é{" "}
 						<span className="text-primary">para você!</span>
@@ -74,12 +75,12 @@ export default function CursosPage() {
 							</div>
 						))}
 					</div>
-				</div>
+				</Container>
 			</section>
 
 			{/* Seção Chamada para Ação / FAQ (Exemplo) */}
-			<section className="bg-muted text-foreground py-20 px-4 md:px-8 lg:px-16 text-center">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28">
+			<section className="bg-muted py-20 px-4 md:px-8 lg:px-16 text-center">
+				<Container className="">
 					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
 						Pronto para começar?
 					</h2>
@@ -104,7 +105,7 @@ export default function CursosPage() {
 							<Link href="/faq">Perguntas Frequentes</Link>
 						</Button>
 					</div>
-				</div>
+				</Container>
 			</section>
 		</>
 	);

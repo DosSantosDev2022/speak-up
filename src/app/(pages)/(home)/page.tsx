@@ -8,7 +8,8 @@ import {
 	Button,
 	Input,
 	WaveBackground,
-} from "@/components"; // Importe o componente de onda
+	Container, // Importe o novo componente Container
+} from "@/components";
 import {
 	advantages,
 	audienceCategories,
@@ -22,9 +23,9 @@ export default function HomePage() {
 	return (
 		<>
 			{/* Seção Hero - Contêiner principal com background e onda */}
-			<section className="relative pt-4 pb-4 md:pb-20 bg-gradient-to-b from-primary to-secondary/70  text-primary-foreground overflow-hidden min-h-[calc(100vh - var(--header-total-height))] flex items-center justify-center">
+			<section className="relative pt-4 pb-4 md:pb-20 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground overflow-hidden min-h-[calc(100vh - var(--header-total-height))] flex items-center justify-center">
 				{/* CONTAINER para alinhar o conteúdo da Hero com o Header */}
-				<div className="container mx-auto mb-6 px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16">
+				<Container className="mb-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16">
 					{/* Bloco de Conteúdo (Título, Descrição, Botões, Estatísticas) */}
 					<div className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10">
 						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
@@ -64,7 +65,7 @@ export default function HomePage() {
 						</div>
 
 						{/* Bloco da Imagem de Ícones e Estatísticas */}
-						<div className="mt-2 flex flex-col sm:flex-row  items-center justify-center md:justify-start gap-6 sm:gap-8 p-4">
+						<div className="mt-2 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 sm:gap-8 p-4">
 							<Image
 								src={"/images/icons.webp"}
 								alt="Ilustração de estudantes de inglês"
@@ -118,8 +119,7 @@ export default function HomePage() {
 							className="w-full h-auto object-cover"
 						/>
 					</div>
-				</div>
-
+				</Container>
 				{/* Onda de Fundo - Posicionada no final da seção Hero */}
 				<WaveBackground
 					className="z-0"
@@ -128,12 +128,12 @@ export default function HomePage() {
 			</section>
 
 			{/* Seção vantagens exclusivas */}
-			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+			<section className="py-20">
+				<Container className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
 					<div className="w-full md:w-4xl space-y-4 text-center md:text-left">
-						<h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight">
+						<h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-bold">
 							Descubra as{" "}
-							<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
+							<span className="bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
 								vantagens
 							</span>{" "}
 							exclusivas do SpeakUp
@@ -153,9 +153,9 @@ export default function HomePage() {
 							personalizado.
 						</p>
 					</div>
-				</div>
+				</Container>
 
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+				<Container className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
 					{advantages.map((advantage) => (
 						<AdvantageCard
 							key={advantage.id}
@@ -164,12 +164,12 @@ export default function HomePage() {
 							description={advantage.description}
 						/>
 					))}
-				</div>
+				</Container>
 			</section>
 
 			{/* Seção "Encontre o melhor caminho para aprender inglês!" */}
-			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+			<section className="py-20">
+				<Container className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
 					{/* Título - Aparece primeiro em mobile */}
 					<div className="max-w-2xl w-full text-center md:text-left">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
@@ -190,9 +190,9 @@ export default function HomePage() {
 							Saiba mais!
 						</Link>
 					</div>
-				</div>
+				</Container>
 
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 mt-8">
+				<Container className="mt-8">
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 						{audienceCategories.map((audience) => (
 							<AudienceCard
@@ -204,22 +204,61 @@ export default function HomePage() {
 							/>
 						))}
 					</div>
-				</div>
+				</Container>
 			</section>
 
-			{/* Seção plataforma SpeakUp */}
+			{/* Seção plataforma */}
 
-			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
+			<section className="py-20">
+				<Container className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-16">
+					{/* Bloco do Título e Descrição */}
+					<div className="max-w-2xl w-full text-center md:text-left md:w-1/2">
+						{" "}
+						{/* Adicionado md:w-1/2 */}
+						<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
+							Uma plataforma{" "}
+							<span className="bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
+								tecnológica
+							</span>{" "}
+							feita para você!
+						</h2>
+						{/* Adicionando uma breve descrição para contextualizar melhor, opcional */}
+						<p className="mt-4 text-lg sm:text-xl text-muted-foreground">
+							Descubra um ambiente de aprendizado intuitivo
+							e completo, desenvolvido para impulsionar sua
+							fluência no inglês de forma prática e eficaz.
+						</p>
+					</div>
+
+					{/* Imagem da Plataforma */}
+					<div className="w-full md:w-1/2 flex justify-center">
+						<Image
+							src={"/images/platform.webp"}
+							alt="Imagem da plataforma SpeakUp"
+							width={800}
+							height={800}
+							quality={100}
+							className="w-full h-auto object-contain rounded-lg shadow-lg max-w-full" // Adicionado shadow-lg e max-w-full
+						/>
+					</div>
+				</Container>
+			</section>
+
+			{/* Seção FEEDBACK */}
+			<section className="py-20">
+				<Container className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
 					{/* Bloco de Título e Texto */}
 					<div className="w-full lg:w-1/3 text-center lg:text-left space-y-4">
-						<h2 className="text-base font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent uppercase tracking-wider">
+						<span className="text-base font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent uppercase tracking-wider">
 							FEEDBACK
-						</h2>
-						<p className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+						</span>
+						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
 							Veja o que nossos estudantes estão achando do
-							SpeakUp!
-						</p>
+							<span className="bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
+								{" "}
+								SpeakUp!
+							</span>
+						</h2>
 					</div>
 
 					{/* Carrossel de Feedbacks */}
@@ -251,44 +290,46 @@ export default function HomePage() {
 							))}
 						</FeedbackCarousel>
 					</div>
-				</div>
+				</Container>
 			</section>
 
 			{/* Seção newslatters */}
-			<section className="container mx-auto py-20 px-4 md:px-8 lg:px-16  text-primary-foreground">
-				<div className=" px-4 border rounded-4xl bg-gradient-to-b from-primary to-secondary/70 sm:px-6 md:px-8 lg:px-28 py-6 flex flex-col items-center justify-between gap-12">
-					{/* Bloco de Texto (Título e Descrição) */}
-					<div className="w-full flex flex-col items-center text-center space-y-4">
-						<h3 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
-							Inscreva-se para receber{" "}
-							<span className="text-accent">
-								ofertas, descontos, atualizações
-							</span>{" "}
-							e muito mais!
-						</h3>
-						<p className="text-base sm:text-lg max-w-xl leading-relaxed">
-							Inscreva-se em nossa newsletter e tenha acesso
-							exclusivo a conteúdos educacionais, dicas de
-							aprendizado de idiomas, atualizações sobre
-							novos cursos e promoções.
-						</p>
-					</div>
+			<section className="py-20">
+				<Container>
+					<div className="px-4 border rounded-4xl bg-gradient-to-b from-primary to-secondary/70 sm:px-6 md:px-8 lg:px-28 py-6 flex flex-col items-center justify-between gap-12">
+						{/* Bloco de Texto (Título e Descrição) */}
+						<div className="w-full flex flex-col items-center text-center space-y-4  text-primary-foreground">
+							<h3 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
+								Inscreva-se para receber{" "}
+								<span className="text-accent">
+									ofertas, descontos, atualizações
+								</span>{" "}
+								e muito mais!
+							</h3>
+							<p className="text-base sm:text-lg max-w-xl leading-relaxed">
+								Inscreva-se em nossa newsletter e tenha
+								acesso exclusivo a conteúdos educacionais,
+								dicas de aprendizado de idiomas,
+								atualizações sobre novos cursos e promoções.
+							</p>
+						</div>
 
-					{/* Formulário de Inscrição */}
-					<div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 lg:mt-0 max-w-md mx-auto">
-						<Input
-							type="email"
-							placeholder="Seu melhor e-mail"
-							className="flex-grow rounded-lg h-12 px-6 py-3 focus:ring-2 focus:ring-secondary focus:border-transparent text-foreground bg-background"
-						/>
-						<Button
-							size="lg"
-							className="w-full sm:w-auto rounded-lg h-12 bg-muted text-muted-foreground hover:bg-muted hover:scale-95"
-						>
-							Inscreva-se
-						</Button>
+						{/* Formulário de Inscrição */}
+						<div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 lg:mt-0 max-w-md mx-auto">
+							<Input
+								type="email"
+								placeholder="Seu melhor e-mail"
+								className="flex-grow rounded-lg h-12 px-6 py-3 focus:ring-2 focus:ring-secondary focus:border-transparent text-foreground bg-background"
+							/>
+							<Button
+								size="lg"
+								className="w-full sm:w-auto rounded-lg h-12 bg-muted text-muted-foreground hover:bg-muted hover:scale-95"
+							>
+								Inscreva-se
+							</Button>
+						</div>
 					</div>
-				</div>
+				</Container>
 			</section>
 		</>
 	);
