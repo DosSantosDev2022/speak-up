@@ -11,12 +11,10 @@ export default function AboutPage() {
 			{/* Seção Hero "Sobre Nós" */}
 			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[30vh] md:min-h-[70vh]">
 				<AnimationContainer
-					initial={{ opacity: 0, y: 30 }}
-					transition={{
-						delay: 0.3,
-						duration: 0.8,
-						ease: "backInOut",
-					}}
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, ease: "backInOut" }}
+					viewport={{ once: true, amount: 0.5 }}
 				>
 					<Container className="z-10">
 						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-7xl mb-4">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+	AnimationContainer,
 	Button,
 	Container,
 	WaveBackground,
@@ -11,16 +12,26 @@ export default function CursosPage() {
 	return (
 		<>
 			{/* Seção Hero "Nossos Cursos" */}
-			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[70vh]">
+			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[50vh] md:min-h-[70vh]">
 				<Container className="z-10">
-					<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
-						Explore Nossos Cursos
-					</h1>
-					<p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
-						Encontre o caminho ideal para alcançar a
-						fluência em inglês, com opções pensadas para
-						cada objetivo e idade.
-					</p>
+					<AnimationContainer
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{
+							duration: 0.8,
+							ease: "backInOut",
+						}}
+						viewport={{ once: true, amount: 0.5 }}
+					>
+						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
+							Explore Nossos Cursos
+						</h1>
+						<p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
+							Encontre o caminho ideal para alcançar a
+							fluência em inglês, com opções pensadas para
+							cada objetivo e idade.
+						</p>
+					</AnimationContainer>
 				</Container>
 				<WaveBackground
 					className="z-0"
@@ -31,14 +42,33 @@ export default function CursosPage() {
 			{/* Seção de Visão Geral dos Cursos (usando cards) */}
 			<section className="py-20 px-4 md:px-8 lg:px-16">
 				<Container className="">
-					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12">
-						Descubra qual curso é{" "}
-						<span className="text-primary">para você!</span>
-					</h2>
+					<AnimationContainer
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{
+							duration: 0.8,
+							ease: "backInOut",
+						}}
+						viewport={{ once: true, amount: 0.5 }}
+					>
+						<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12">
+							Descubra qual curso é{" "}
+							<span className="text-primary">
+								para você!
+							</span>
+						</h2>
+					</AnimationContainer>
 
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 						{courses.map((course) => (
-							<div
+							<AnimationContainer
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{
+									duration: 0.8,
+									ease: "backInOut",
+								}}
+								viewport={{ once: true, amount: 0.5 }}
 								key={course.id}
 								className="flex flex-col bg-card rounded-lg shadow-lg overflow-hidden h-full"
 							>
@@ -65,14 +95,14 @@ export default function CursosPage() {
 									{/* Botão de Link */}
 									<Button
 										asChild
-										className="w-full mt-4 rounded-full"
+										className="w-full mt-4 rounded-full hover:scale-95 transition-transform duration-300"
 									>
 										<Link href={course.linkHref}>
 											Saber Mais
 										</Link>
 									</Button>
 								</div>
-							</div>
+							</AnimationContainer>
 						))}
 					</div>
 				</Container>
@@ -81,30 +111,42 @@ export default function CursosPage() {
 			{/* Seção Chamada para Ação / FAQ (Exemplo) */}
 			<section className="bg-muted py-20 px-4 md:px-8 lg:px-16 text-center">
 				<Container className="">
-					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
-						Pronto para começar?
-					</h2>
-					<p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10">
-						Se ainda tem dúvidas sobre qual curso escolher,
-						fale com um de nossos consultores ou confira
-						nossa seção de Perguntas Frequentes.
-					</p>
-					<div className="flex flex-col sm:flex-row justify-center gap-4">
-						<Button
-							size="lg"
-							className="rounded-full"
-							asChild
-						>
-							<Link href="/contact">Fale Conosco</Link>
-						</Button>
-						<Button
-							size="lg"
-							className="rounded-full"
-							asChild
-						>
-							<Link href="/faq">Perguntas Frequentes</Link>
-						</Button>
-					</div>
+					<AnimationContainer
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{
+							duration: 0.8,
+							ease: "backInOut",
+						}}
+						viewport={{ once: true, amount: 0.5 }}
+					>
+						<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
+							Pronto para começar?
+						</h2>
+						<p className="text-lg sm:text-xl max-w-3xl mx-auto mb-10">
+							Se ainda tem dúvidas sobre qual curso
+							escolher, fale com um de nossos consultores ou
+							confira nossa seção de Perguntas Frequentes.
+						</p>
+						<div className="flex flex-col sm:flex-row justify-center gap-4">
+							<Button
+								size="lg"
+								className="rounded-full hover:scale-95 transition-transform duration-300"
+								asChild
+							>
+								<Link href="/contact">Fale Conosco</Link>
+							</Button>
+							<Button
+								size="lg"
+								className="rounded-full hover:scale-95 transition-transform duration-300"
+								asChild
+							>
+								<Link href="/faq">
+									Perguntas Frequentes
+								</Link>
+							</Button>
+						</div>
+					</AnimationContainer>
 				</Container>
 			</section>
 		</>

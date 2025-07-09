@@ -4,6 +4,7 @@
 import { Mail, Phone } from "lucide-react"; // Ícones para informações de contato
 import { useState } from "react";
 import {
+	AnimationContainer,
 	Button,
 	Container,
 	Input,
@@ -52,7 +53,16 @@ export default function ContactPage() {
 		<>
 			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[70vh] overflow-hidden">
 				<Container className="  z-10">
-					<div className="w-full max-w-2xl mx-auto mb-12 flex flex-col items-center">
+					<AnimationContainer
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{
+							duration: 0.8,
+							ease: "backInOut",
+						}}
+						viewport={{ once: true, amount: 0.5 }}
+						className="w-full max-w-2xl mx-auto mb-12 flex flex-col items-center"
+					>
 						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
 							Entre em Contato Conosco
 						</h1>
@@ -62,7 +72,7 @@ export default function ContactPage() {
 							abaixo e entraremos em contato o mais breve
 							possível!
 						</p>
-					</div>
+					</AnimationContainer>
 				</Container>
 
 				<WaveBackground
@@ -72,7 +82,13 @@ export default function ContactPage() {
 			</section>
 
 			<section className="w-full flex items-center justify-center py-20 px-4 md:px-8 lg:px-16">
-				<div className="bg-background w-full max-w-2xl p-8 md:p-12 mb-12 rounded-lg shadow text-foreground">
+				<AnimationContainer
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, ease: "backInOut" }}
+					viewport={{ once: true, amount: 0.5 }}
+					className="bg-background w-full max-w-2xl p-8 md:p-12 mb-12 rounded-lg shadow text-foreground"
+				>
 					<form
 						onSubmit={handleSubmit}
 						className="space-y-6"
@@ -175,7 +191,7 @@ export default function ContactPage() {
 							<span>(XX) XXXX-XXXX</span>
 						</p>
 					</div>
-				</div>
+				</AnimationContainer>
 			</section>
 		</>
 	);
