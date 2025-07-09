@@ -50,7 +50,7 @@ const TeamMembers = () => {
 					<h3 className="text-xl font-semibold text-card-foreground mb-1">
 						{member.name}
 					</h3>
-					<p className="text-muted-foreground text-sm font-bold mb-3">
+					<p className="text-secondary text-sm font-bold mb-3">
 						{member.role}
 					</p>
 					<p className="text-muted-foreground text-sm line-clamp-3">

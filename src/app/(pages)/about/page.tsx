@@ -4,7 +4,7 @@ export default function AboutPage() {
 	return (
 		<>
 			{/* Seção Hero "Sobre Nós" */}
-			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[50vh]">
+			<section className="relative py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground text-center flex flex-col items-center justify-start min-h-[60vh]">
 				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 z-10">
 					<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-7xl mb-4">
 						Sobre a{" "}
@@ -27,7 +27,7 @@ export default function AboutPage() {
 			{/* Seção Nossa Missão e Visão */}
 			<section className="bg-background text-foreground py-20 px-4 md:px-8 lg:px-16">
 				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-					<div className="w-full md:w-1/2 text-center md:text-left">
+					<div className="w-full md:w-1/2 text-center">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
 							Nossa{" "}
 							<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
@@ -43,7 +43,7 @@ export default function AboutPage() {
 							aluno.
 						</p>
 					</div>
-					<div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+					<div className="w-full md:w-1/2 text-center mt-8 md:mt-0">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
 							Nossa{" "}
 							<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
