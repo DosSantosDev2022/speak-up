@@ -1,5 +1,6 @@
 /* Componentes de layout */
 
+export * from "./global/Animation";
 export * from "./global/Container";
 /* Componentes globais */
 export * from "./global/Wave-background";

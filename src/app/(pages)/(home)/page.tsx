@@ -8,7 +8,8 @@ import {
 	Button,
 	Input,
 	WaveBackground,
-	Container, // Importe o novo componente Container
+	Container,
+	AnimationContainer, // Importe o novo componente AnimationContainer
 } from "@/components";
 import {
 	advantages,
@@ -27,7 +28,16 @@ export default function HomePage() {
 				{/* CONTAINER para alinhar o conteúdo da Hero com o Header */}
 				<Container className="mb-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16">
 					{/* Bloco de Conteúdo (Título, Descrição, Botões, Estatísticas) */}
-					<div className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10">
+					{/* Animação para o bloco de texto (título, descrição, botões) */}
+					<AnimationContainer
+						initial={{ opacity: 0, x: -50 }}
+						transition={{
+							duration: 0.8,
+							ease: "easeInOut",
+						}}
+						viewport={{ once: true, amount: 0.3 }}
+						className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10"
+					>
 						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
 							Embarque em uma jornada online rumo à fluência
 							no inglês!
@@ -41,7 +51,17 @@ export default function HomePage() {
 						</p>
 
 						{/* Grupo de Botões */}
-						<div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+						{/* Animação para os botões */}
+						<AnimationContainer
+							initial={{ opacity: 0, y: 30 }}
+							transition={{
+								delay: 0.3,
+								duration: 0.6,
+								ease: "easeInOut",
+							}}
+							viewport={{ once: true, amount: 0.5 }}
+							className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4"
+						>
 							<Button
 								size={"lg"}
 								className="bg-muted text-foreground w-full rounded-4xl sm:w-auto hover:scale-95 hover:bg-muted"
@@ -62,10 +82,20 @@ export default function HomePage() {
 									Veja como funciona
 								</Link>
 							</Button>
-						</div>
+						</AnimationContainer>
 
 						{/* Bloco da Imagem de Ícones e Estatísticas */}
-						<div className="mt-2 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 sm:gap-8 p-4">
+						{/* Animação para as estatísticas */}
+						<AnimationContainer
+							initial={{ opacity: 0, scale: 0.8 }}
+							transition={{
+								delay: 0.6,
+								duration: 0.7,
+								ease: "easeInOut",
+							}}
+							viewport={{ once: true, amount: 0.5 }}
+							className="mt-2 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 sm:gap-8 p-4"
+						>
 							<Image
 								src={"/images/icons.webp"}
 								alt="Ilustração de estudantes de inglês"
@@ -105,11 +135,20 @@ export default function HomePage() {
 									</span>
 								</div>
 							</div>
-						</div>
-					</div>
+						</AnimationContainer>
+					</AnimationContainer>
 
 					{/* Imagem do estudante */}
-					<div className="relative lg:-bottom-6 -bottom-12 right-0 w-[80%] md:w-[40%] lg:w-[35%] xl:w-[30%] h-auto ">
+					{/* Animação para a imagem do estudante */}
+					<AnimationContainer
+						initial={{ opacity: 0, y: 50, scale: 0.9 }}
+						transition={{
+							duration: 0.8,
+							ease: "backInOut",
+						}}
+						viewport={{ once: true, amount: 0.3 }}
+						className="relative lg:-bottom-6 -bottom-12 right-0 w-[80%] md:w-[40%] lg:w-[35%] xl:w-[30%] h-auto "
+					>
 						<Image
 							src={"/images/student-hero.webp"}
 							alt="Imagem de estudante de inglês"
@@ -118,7 +157,7 @@ export default function HomePage() {
 							quality={100}
 							className="w-full h-auto object-cover"
 						/>
-					</div>
+					</AnimationContainer>
 				</Container>
 				{/* Onda de Fundo - Posicionada no final da seção Hero */}
 				<WaveBackground
@@ -126,95 +165,135 @@ export default function HomePage() {
 					fillColor="fill-background"
 				/>
 			</section>
-
 			{/* Seção vantagens exclusivas */}
 			<section className="py-20">
-				<Container className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
-					<div className="w-full md:w-4xl space-y-4 text-center md:text-left">
-						<h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-bold">
-							Descubra as{" "}
-							<span className="bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
-								vantagens
-							</span>{" "}
-							exclusivas do SpeakUp
-						</h2>
-						<Link
-							className="inline-block border border-secondary text-secondary rounded-4xl px-4 py-2 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300"
-							href={"/#"}
-						>
-							Ver todas as vantagens
-						</Link>
-					</div>
+				{/* Animação para o título e o link da seção de vantagens */}
+				<AnimationContainer
+					initial={{ opacity: 0, y: 30 }}
+					transition={{ duration: 0.7, ease: "easeInOut" }}
+					viewport={{ once: true, amount: 0.3 }}
+				>
+					<Container className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+						<div className="w-full md:w-4xl space-y-4 text-center md:text-left">
+							<h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-bold">
+								Descubra as{" "}
+								<span className="bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
+									vantagens
+								</span>{" "}
+								exclusivas do SpeakUp
+							</h2>
+							<Link
+								className="inline-block border border-secondary text-secondary rounded-4xl px-4 py-2 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300"
+								href={"/#"}
+							>
+								Ver todas as vantagens
+							</Link>
+						</div>
 
-					<div className="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
-						<p className="text-lg sm:text-xl leading-relaxed">
-							Transforme sua jornada de aprendizado com
-							recursos de primeira classe e suporte
-							personalizado.
-						</p>
-					</div>
-				</Container>
+						<div className="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
+							<p className="text-lg sm:text-xl leading-relaxed">
+								Transforme sua jornada de aprendizado com
+								recursos de primeira classe e suporte
+								personalizado.
+							</p>
+						</div>
+					</Container>
+				</AnimationContainer>
 
+				{/* Animação para cada AdvantageCard individualmente com um atraso */}
 				<Container className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-					{advantages.map((advantage) => (
-						<AdvantageCard
+					{advantages.map((advantage, index) => (
+						<AnimationContainer
 							key={advantage.id}
-							icon={advantage.icon}
-							title={advantage.title}
-							description={advantage.description}
-						/>
+							initial={{ opacity: 0, y: 50 }}
+							transition={{
+								delay: index * 0.1,
+								duration: 0.6,
+								ease: "easeInOut",
+							}} // Atraso progressivo
+							viewport={{ once: true, amount: 0.3 }}
+						>
+							<AdvantageCard
+								icon={advantage.icon}
+								title={advantage.title}
+								description={advantage.description}
+							/>
+						</AnimationContainer>
 					))}
 				</Container>
 			</section>
-
 			{/* Seção "Encontre o melhor caminho para aprender inglês!" */}
 			<section className="py-20">
-				<Container className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
-					{/* Título - Aparece primeiro em mobile */}
-					<div className="max-w-2xl w-full text-center md:text-left">
-						<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
-							Encontre o melhor{" "}
-							<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
-								caminho
-							</span>{" "}
-							para aprender inglês!
-						</h2>
-					</div>
+				{/* Animação para o título e o botão da seção de audiência */}
+				<AnimationContainer
+					initial={{ opacity: 0, y: -50 }}
+					transition={{ duration: 0.7, ease: "backInOut" }}
+					viewport={{ once: true, amount: 0.3 }}
+				>
+					<Container className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+						{/* Título - Aparece primeiro em mobile */}
+						<div className="max-w-2xl w-full text-center md:text-left">
+							<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
+								Encontre o melhor{" "}
+								<span className="font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
+									caminho
+								</span>{" "}
+								para aprender inglês!
+							</h2>
+						</div>
 
-					{/* Botão "Saiba mais!" - Aparece segundo em mobile, alinhado à direita em desktop */}
-					<div className="w-full md:w-auto flex justify-center md:justify-end">
-						<Link
-							className="inline-block border border-secondary text-secondary rounded-4xl px-6 py-3 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300 text-lg"
-							href={"/#"}
-						>
-							Saiba mais!
-						</Link>
-					</div>
-				</Container>
+						{/* Botão "Saiba mais!" - Aparece segundo em mobile, alinhado à direita em desktop */}
+						<div className="w-full md:w-auto flex justify-center md:justify-end">
+							<Link
+								className="inline-block border border-secondary text-secondary rounded-4xl px-6 py-3 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300 text-lg"
+								href={"/#"}
+							>
+								Saiba mais!
+							</Link>
+						</div>
+					</Container>
+				</AnimationContainer>
 
+				{/* Animação para cada AudienceCard individualmente com um atraso */}
 				<Container className="mt-8">
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-						{audienceCategories.map((audience) => (
-							<AudienceCard
+						{audienceCategories.map((audience, index) => (
+							<AnimationContainer
 								key={audience.title}
-								imageSrc={audience.imageSrc}
-								title={audience.title}
-								description={audience.description}
-								linkHref={audience.linkHref}
-							/>
+								initial={{ opacity: 0, y: 50, scale: 0.9 }}
+								transition={{
+									delay: index * 0.1,
+									duration: 0.8,
+									ease: "backInOut",
+								}} // Atraso progressivo
+								viewport={{ once: true, amount: 0.3 }}
+							>
+								<AudienceCard
+									imageSrc={audience.imageSrc}
+									title={audience.title}
+									description={audience.description}
+									linkHref={audience.linkHref}
+								/>
+							</AnimationContainer>
 						))}
 					</div>
 				</Container>
 			</section>
-
+			---
 			{/* Seção plataforma */}
-
 			<section className="py-20">
 				<Container className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-16">
 					{/* Bloco do Título e Descrição */}
-					<div className="max-w-2xl w-full text-center md:text-left md:w-1/2">
-						{" "}
-						{/* Adicionado md:w-1/2 */}
+					{/* Animação para o texto da plataforma */}
+					<AnimationContainer
+						initial={{ opacity: 0, x: -50 }}
+						transition={{
+							duration: 0.7,
+							ease: "easeInOut",
+						}}
+						viewport={{ once: true, amount: 0.3 }}
+						className="max-w-2xl w-full text-center md:text-left md:w-1/2"
+					>
 						<h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-bold">
 							Uma plataforma{" "}
 							<span className="bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent">
@@ -222,33 +301,50 @@ export default function HomePage() {
 							</span>{" "}
 							feita para você!
 						</h2>
-						{/* Adicionando uma breve descrição para contextualizar melhor, opcional */}
 						<p className="mt-4 text-lg sm:text-xl text-muted-foreground">
 							Descubra um ambiente de aprendizado intuitivo
 							e completo, desenvolvido para impulsionar sua
 							fluência no inglês de forma prática e eficaz.
 						</p>
-					</div>
+					</AnimationContainer>
 
 					{/* Imagem da Plataforma */}
-					<div className="w-full md:w-1/2 flex justify-center">
+					{/* Animação para a imagem da plataforma */}
+					<AnimationContainer
+						initial={{ opacity: 0, x: 50, scale: 0.9 }}
+						transition={{
+							duration: 0.8,
+							ease: "easeInOut",
+						}}
+						viewport={{ once: true, amount: 0.3 }}
+						className="w-full md:w-1/2 flex justify-center"
+					>
 						<Image
 							src={"/images/platform.webp"}
 							alt="Imagem da plataforma SpeakUp"
 							width={800}
 							height={800}
 							quality={100}
-							className="w-full h-auto object-contain rounded-lg shadow-lg max-w-full" // Adicionado shadow-lg e max-w-full
+							className="w-full h-auto object-contain rounded-lg shadow-lg max-w-full"
 						/>
-					</div>
+					</AnimationContainer>
 				</Container>
 			</section>
-
+			---
 			{/* Seção FEEDBACK */}
 			<section className="py-20">
 				<Container className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
 					{/* Bloco de Título e Texto */}
-					<div className="w-full lg:w-1/3 text-center lg:text-left space-y-4">
+					{/* Animação para o texto de feedback */}
+					<AnimationContainer
+						initial={{ opacity: 0, y: 30 }}
+						transition={{
+							duration: 0.7,
+							ease: "easeInOut",
+						}}
+						viewport={{ once: true, amount: 0.3 }}
+						className="w-full lg:w-1/3 text-center lg:text-left space-y-4"
+					>
 						<span className="text-base font-bold bg-gradient-to-b from-secondary to-primary bg-clip-text text-transparent uppercase tracking-wider">
 							FEEDBACK
 						</span>
@@ -259,10 +355,19 @@ export default function HomePage() {
 								SpeakUp!
 							</span>
 						</h2>
-					</div>
+					</AnimationContainer>
 
 					{/* Carrossel de Feedbacks */}
-					<div className="w-full lg:w-2/3">
+					{/* Animação para o carrossel de feedback */}
+					<AnimationContainer
+						initial={{ opacity: 0, x: 50 }}
+						transition={{
+							duration: 0.8,
+							ease: "easeInOut",
+						}}
+						viewport={{ once: true, amount: 0.3 }}
+						className="w-full lg:w-2/3"
+					>
 						<FeedbackCarousel>
 							{feedbackData.map((feedback) => (
 								<div
@@ -289,47 +394,65 @@ export default function HomePage() {
 								</div>
 							))}
 						</FeedbackCarousel>
-					</div>
+					</AnimationContainer>
 				</Container>
 			</section>
-
+			---
 			{/* Seção newslatters */}
 			<section className="py-20">
-				<Container>
-					<div className="px-4 border rounded-4xl bg-gradient-to-b from-primary to-secondary/70 sm:px-6 md:px-8 lg:px-28 py-6 flex flex-col items-center justify-between gap-12">
-						{/* Bloco de Texto (Título e Descrição) */}
-						<div className="w-full flex flex-col items-center text-center space-y-4  text-primary-foreground">
-							<h3 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
-								Inscreva-se para receber{" "}
-								<span className="text-accent">
-									ofertas, descontos, atualizações
-								</span>{" "}
-								e muito mais!
-							</h3>
-							<p className="text-base sm:text-lg max-w-xl leading-relaxed">
-								Inscreva-se em nossa newsletter e tenha
-								acesso exclusivo a conteúdos educacionais,
-								dicas de aprendizado de idiomas,
-								atualizações sobre novos cursos e promoções.
-							</p>
-						</div>
+				{/* Animação para toda a seção da newsletter */}
+				<AnimationContainer
+					initial={{ opacity: 0, y: 50, scale: 0.95 }}
+					transition={{ duration: 0.8, ease: "easeInOut" }}
+					viewport={{ once: true, amount: 0.4 }}
+				>
+					<Container>
+						<div className="px-4 border rounded-4xl bg-gradient-to-b from-primary to-secondary/70 sm:px-6 md:px-8 lg:px-28 py-6 flex flex-col items-center justify-between gap-12">
+							{/* Bloco de Texto (Título e Descrição) */}
+							<div className="w-full flex flex-col items-center text-center space-y-4 text-primary-foreground">
+								<h3 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">
+									Inscreva-se para receber{" "}
+									<span className="text-accent">
+										ofertas, descontos, atualizações
+									</span>{" "}
+									e muito mais!
+								</h3>
+								<p className="text-base sm:text-lg max-w-xl leading-relaxed">
+									Inscreva-se em nossa newsletter e tenha
+									acesso exclusivo a conteúdos educacionais,
+									dicas de aprendizado de idiomas,
+									atualizações sobre novos cursos e
+									promoções.
+								</p>
+							</div>
 
-						{/* Formulário de Inscrição */}
-						<div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 lg:mt-0 max-w-md mx-auto">
-							<Input
-								type="email"
-								placeholder="Seu melhor e-mail"
-								className="flex-grow rounded-lg h-12 px-6 py-3 focus:ring-2 focus:ring-secondary focus:border-transparent text-foreground bg-background"
-							/>
-							<Button
-								size="lg"
-								className="w-full sm:w-auto rounded-lg h-12 bg-muted text-muted-foreground hover:bg-muted hover:scale-95"
+							{/* Formulário de Inscrição */}
+							{/* Animação para o formulário de inscrição */}
+							<AnimationContainer
+								initial={{ opacity: 0, y: 20 }}
+								transition={{
+									delay: 0.4,
+									duration: 0.6,
+									ease: "easeInOut",
+								}}
+								viewport={{ once: true, amount: 0.5 }}
+								className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 lg:mt-0 max-w-md mx-auto"
 							>
-								Inscreva-se
-							</Button>
+								<Input
+									type="email"
+									placeholder="Seu melhor e-mail"
+									className="flex-grow rounded-lg h-12 px-6 py-3 focus:ring-2 focus:ring-secondary focus:border-transparent text-foreground bg-background"
+								/>
+								<Button
+									size="lg"
+									className="w-full sm:w-auto rounded-lg h-12 bg-muted text-muted-foreground hover:bg-muted hover:scale-95"
+								>
+									Inscreva-se
+								</Button>
+							</AnimationContainer>
 						</div>
-					</div>
-				</Container>
+					</Container>
+				</AnimationContainer>
 			</section>
 		</>
 	);
