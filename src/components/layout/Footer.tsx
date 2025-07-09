@@ -14,10 +14,10 @@ const Footer = () => {
 		{
 			title: "SpeakUp",
 			links: [
-				{ name: "Sobre Nós", href: "/sobre" },
-				{ name: "Professores", href: "/professores" },
-				{ name: "Metodologia", href: "/metodologia" },
-				{ name: "Depoimentos", href: "/depoimentos" },
+				{ name: "Sobre Nós", href: "/#" },
+				{ name: "Professores", href: "/#" },
+				{ name: "Metodologia", href: "/#" },
+				{ name: "Depoimentos", href: "/#" },
 			],
 		},
 		{
@@ -25,19 +25,19 @@ const Footer = () => {
 			links: [
 				{
 					name: "Inglês para Crianças",
-					href: "/cursos/criancas",
+					href: "/#",
 				},
 				{
 					name: "Inglês para Adolescentes",
-					href: "/cursos/adolescentes",
+					href: "/#",
 				},
 				{
 					name: "Inglês para Adultos",
-					href: "/cursos/adultos",
+					href: "/#",
 				},
 				{
 					name: "Preparatório TOEFL/IELTS",
-					href: "/cursos/toefl-ielts",
+					href: "/#",
 				},
 			],
 		},
@@ -45,12 +45,12 @@ const Footer = () => {
 			title: "Suporte",
 			links: [
 				{ name: "FAQ", href: "/faq" },
-				{ name: "Contato", href: "/contato" },
+				{ name: "Contato", href: "/#" },
 				{
 					name: "Política de Privacidade",
-					href: "/politica-privacidade",
+					href: "/#",
 				},
-				{ name: "Termos de Uso", href: "/termos-uso" },
+				{ name: "Termos de Uso", href: "/#" },
 			],
 		},
 	];
@@ -60,17 +60,17 @@ const Footer = () => {
 		{
 			name: "Facebook",
 			icon: Facebook,
-			href: "https://facebook.com/speakup",
+			href: "#",
 		},
 		{
 			name: "Instagram",
 			icon: Instagram,
-			href: "https://instagram.com/speakup",
+			href: "#",
 		},
 		{
 			name: "YouTube",
 			icon: Youtube,
-			href: "https://youtube.com/speakup",
+			href: "#",
 		},
 	];
 

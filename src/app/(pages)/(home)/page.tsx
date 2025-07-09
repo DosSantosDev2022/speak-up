@@ -26,7 +26,7 @@ export default function HomePage() {
 			{/* Seção Hero - Contêiner principal com background e onda */}
 			<section className="relative pt-4 pb-4 md:pb-20 bg-gradient-to-b from-primary to-secondary/70 text-primary-foreground overflow-hidden min-h-[calc(100vh - var(--header-total-height))] flex items-center justify-center">
 				{/* CONTAINER para alinhar o conteúdo da Hero com o Header */}
-				<Container className="mb-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16">
+				<Container className="mb-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16">
 					{/* Bloco de Conteúdo (Título, Descrição, Botões, Estatísticas) */}
 					{/* Animação para o bloco de texto (título, descrição, botões) */}
 					<AnimationContainer
@@ -36,19 +36,20 @@ export default function HomePage() {
 							ease: "easeInOut",
 						}}
 						viewport={{ once: true, amount: 0.3 }}
-						className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10"
 					>
-						<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
-							Embarque em uma jornada online rumo à fluência
-							no inglês!
-						</h1>
-						<p className="mt-4 text-lg sm:text-xl">
-							Explore uma didática e ferramentas inovadoras
-							que impulsionarão seu avanço linguístico.
-							Descubra o poder transformador da SpeakUp e
-							abra portas para um futuro brilhante e repleto
-							de oportunidades!
-						</p>
+						<div className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10">
+							<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
+								Embarque em uma jornada online rumo à
+								fluência no inglês!
+							</h1>
+							<p className="mt-4 text-lg sm:text-xl">
+								Explore uma didática e ferramentas
+								inovadoras que impulsionarão seu avanço
+								linguístico. Descubra o poder transformador
+								da SpeakUp e abra portas para um futuro
+								brilhante e repleto de oportunidades!
+							</p>
+						</div>
 
 						{/* Grupo de Botões */}
 						{/* Animação para os botões */}
@@ -246,7 +247,7 @@ export default function HomePage() {
 						<div className="w-full md:w-auto flex justify-center md:justify-end">
 							<Link
 								className="inline-block border border-secondary text-secondary rounded-4xl px-6 py-3 hover:bg-gradient-to-b hover:to-primary hover:from-secondary/70 hover:text-primary-foreground transition-colors duration-300 text-lg"
-								href={"/#"}
+								href={"/courses"}
 							>
 								Saiba mais!
 							</Link>
@@ -279,7 +280,7 @@ export default function HomePage() {
 					</div>
 				</Container>
 			</section>
-			---
+
 			{/* Seção plataforma */}
 			<section className="py-20">
 				<Container className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-16">
@@ -330,7 +331,7 @@ export default function HomePage() {
 					</AnimationContainer>
 				</Container>
 			</section>
-			---
+
 			{/* Seção FEEDBACK */}
 			<section className="py-20">
 				<Container className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
@@ -397,7 +398,7 @@ export default function HomePage() {
 					</AnimationContainer>
 				</Container>
 			</section>
-			---
+
 			{/* Seção newslatters */}
 			<section className="py-20">
 				{/* Animação para toda a seção da newsletter */}
