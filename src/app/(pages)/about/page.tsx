@@ -209,7 +209,7 @@ export default function AboutPage() {
 				</Container>
 			</section>
 
-			{/* Seção Conheça Nossa Equipe (Exemplo de Grid de Fotos) */}
+			{/* Seção Conheça Nossa Equipe */}
 			<section className="py-20 px-4 md:px-8 lg:px-16">
 				<Container className="text-center">
 					<AnimationContainer

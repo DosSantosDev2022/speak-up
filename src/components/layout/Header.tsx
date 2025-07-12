@@ -60,10 +60,10 @@ const Header = () => {
 					{/* Botões de Ação Desktop */}
 					<div className="hidden md:flex items-center space-x-2">
 						<Button variant={"link"} asChild>
-							<Link href="/login">Login</Link>
+							<Link href="/#">Login</Link>
 						</Button>
 						<Button variant={"default"} asChild>
-							<Link href="/signup">Sign Up</Link>
+							<Link href="/#">Sign Up</Link>
 						</Button>
 					</div>
 					{/* Menu Hambúrguer (Mobile) com Shadcn UI Sheet */}

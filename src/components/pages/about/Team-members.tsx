@@ -14,20 +14,23 @@ const TeamMembers = () => {
 					key={member.id}
 					className="bg-card rounded-lg shadow-md p-6 flex flex-col items-center"
 				>
-					<Image
-						src={member.image}
-						alt={member.name}
-						width={120}
-						height={120}
-						className="rounded-full object-cover mb-4 border-4 border-secondary"
-					/>
-					<h3 className="text-xl font-semibold text-card-foreground mb-1">
+					<div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-secondary/50">
+						<Image
+							src={member.image}
+							alt={member.name}
+							layout="fill"
+							objectFit="cover"
+							className="rounded-full"
+						/>
+					</div>
+
+					<h3 className="text-xl font-bold mb-1">
 						{member.name}
 					</h3>
-					<p className="text-secondary text-sm font-bold mb-3">
+					<p className="text-sm text-secondary mb-3">
 						{member.role}
 					</p>
-					<p className="text-muted-foreground text-sm line-clamp-3">
+					<p className="text-muted-foreground text-sm line-clamp-4">
 						{member.bio}
 					</p>
 				</AnimationContainer>

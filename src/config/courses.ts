@@ -6,7 +6,7 @@ export const courses = [
 		description:
 			"Aulas lúdicas e interativas que transformam o aprendizado em brincadeira. Seu filho vai desenvolver as bases do inglês de forma divertida e natural.",
 		imageSrc: "/images/kids-course.webp", // Crie estas imagens
-		linkHref: "/cursos/criancas",
+		linkHref: "/#",
 	},
 	{
 		id: 2,
@@ -14,7 +14,7 @@ export const courses = [
 		description:
 			"Conteúdo dinâmico e relevante, focado em comunicação para o dia a dia e preparação para desafios acadêmicos e sociais.",
 		imageSrc: "/images/teens-course.webp",
-		linkHref: "/cursos/adolescentes",
+		linkHref: "/#",
 	},
 	{
 		id: 3,
@@ -22,7 +22,7 @@ export const courses = [
 		description:
 			"Cursos flexíveis e personalizados para suas necessidades. Ideal para carreira, viagens ou desenvolvimento pessoal, com foco na fluência.",
 		imageSrc: "/images/adults-course.webp",
-		linkHref: "/cursos/adultos",
+		linkHref: "/#",
 	},
 	{
 		id: 4,
@@ -30,7 +30,7 @@ export const courses = [
 		description:
 			"Programas intensivos e focados para você alcançar a pontuação desejada nos exames de proficiência, abrindo portas para universidades e oportunidades internacionais.",
 		imageSrc: "/images/toefl-ielts-course.webp",
-		linkHref: "/cursos/toefl-ielts",
+		linkHref: "/#",
 	},
 	{
 		id: 5,
@@ -38,7 +38,7 @@ export const courses = [
 		description:
 			"Aprimore suas habilidades de comunicação para o ambiente corporativo. Foco em reuniões, apresentações, negociações e e-mails profissionais.",
 		imageSrc: "/images/business-course.webp",
-		linkHref: "/cursos/negocios",
+		linkHref: "/#",
 	},
 	{
 		id: 6,
@@ -46,6 +46,6 @@ export const courses = [
 		description:
 			"Prepare-se para suas aventuras internacionais! Aprenda frases essenciais, vocabulário de viagem e dicas culturais para explorar o mundo com confiança.",
 		imageSrc: "/images/travel-course.webp",
-		linkHref: "/cursos/viagem",
+		linkHref: "/#",
 	},
 ];

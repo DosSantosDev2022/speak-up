@@ -40,7 +40,7 @@ const navLinks = [
 		title: "Suporte",
 		links: [
 			{ name: "FAQ", href: "/faq" },
-			{ name: "Contato", href: "/#" },
+			{ name: "Contato", href: "/contact" },
 			{
 				name: "Política de Privacidade",
 				href: "/#",
