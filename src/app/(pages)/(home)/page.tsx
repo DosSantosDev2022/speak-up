@@ -31,6 +31,7 @@ export default function HomePage() {
 					{/* Animação para o bloco de texto (título, descrição, botões) */}
 					<AnimationContainer
 						initial={{ opacity: 0, x: -50 }}
+						whileInView={{ opacity: 1, x: 0 }}
 						transition={{
 							duration: 0.8,
 							ease: "easeInOut",
@@ -38,7 +39,7 @@ export default function HomePage() {
 						viewport={{ once: true, amount: 0.3 }}
 					>
 						<div className="flex-1 max-w-full md:max-w-2xl text-center md:text-left z-10">
-							<h1 className="text-4xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
+							<h1 className="text-3xl leading-tight font-bold sm:text-5xl md:text-6xl mb-4">
 								Embarque em uma jornada online rumo à
 								fluência no inglês!
 							</h1>
@@ -89,13 +90,14 @@ export default function HomePage() {
 						{/* Animação para as estatísticas */}
 						<AnimationContainer
 							initial={{ opacity: 0, scale: 0.8 }}
+							whileInView={{ opacity: 1, scale: 1 }}
 							transition={{
 								delay: 0.6,
 								duration: 0.7,
 								ease: "easeInOut",
 							}}
 							viewport={{ once: true, amount: 0.5 }}
-							className="mt-2 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 sm:gap-8 p-4"
+							className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-8 p-4"
 						>
 							<Image
 								src={"/images/icons.webp"}
@@ -106,13 +108,13 @@ export default function HomePage() {
 								className="max-w-full h-auto"
 							/>
 							{/* Seções de Estatísticas */}
-							<div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-6 sm:gap-8 mt-4 sm:mt-0">
+							<div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-8 mt-4 sm:mt-0">
 								{/* Seção de Estudantes Conectados */}
 								<div className="flex flex-col items-center text-center">
-									<span className="text-2xl font-bold">
+									<span className="text-4xl md:text-3xl font-bold">
 										4.359
 									</span>
-									<span className="text-sm mt-1">
+									<span className="text-xl md:text-base mt-1">
 										Estudantes Conectados
 									</span>
 								</div>
@@ -125,11 +127,11 @@ export default function HomePage() {
 
 								{/* Seção de Avaliações */}
 								<div className="flex flex-col items-center text-center">
-									<span className="text-2xl font-bold">
+									<span className="text-4xl md:text-3xl font-bold">
 										4.8/5
 									</span>
-									<span className="text-sm flex items-center justify-center gap-1">
-										<span className="text-yellow-400 text-xl">
+									<span className="text-xl md:text-base flex items-center justify-center gap-1">
+										<span className="text-yellow-400">
 											★★★★★
 										</span>
 										Avaliações
@@ -143,6 +145,7 @@ export default function HomePage() {
 					{/* Animação para a imagem do estudante */}
 					<AnimationContainer
 						initial={{ opacity: 0, y: 50, scale: 0.9 }}
+						whileInView={{ opacity: 1, y: 0, scale: 1 }}
 						transition={{
 							duration: 0.8,
 							ease: "backInOut",
@@ -288,6 +291,7 @@ export default function HomePage() {
 					{/* Animação para o texto da plataforma */}
 					<AnimationContainer
 						initial={{ opacity: 0, x: -50 }}
+						whileInView={{ opacity: 1, x: 0 }}
 						transition={{
 							duration: 0.7,
 							ease: "easeInOut",
@@ -313,6 +317,7 @@ export default function HomePage() {
 					{/* Animação para a imagem da plataforma */}
 					<AnimationContainer
 						initial={{ opacity: 0, x: 50, scale: 0.9 }}
+						whileInView={{ opacity: 1, x: 0, scale: 1 }}
 						transition={{
 							duration: 0.8,
 							ease: "easeInOut",
@@ -362,6 +367,7 @@ export default function HomePage() {
 					{/* Animação para o carrossel de feedback */}
 					<AnimationContainer
 						initial={{ opacity: 0, x: 50 }}
+						whileInView={{ opacity: 1, x: 0 }}
 						transition={{
 							duration: 0.8,
 							ease: "easeInOut",
