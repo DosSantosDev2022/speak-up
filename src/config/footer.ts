@@ -11,7 +11,7 @@ const navLinks = [
 		links: [
 			{ name: "Sobre Nós", href: "/about" },
 			{ name: "Professores", href: "/teachers" },
-			{ name: "Metodologia", href: "/metodologia" },
+			{ name: "Metodologia", href: "/methodology" },
 			{ name: "Depoimentos", href: "/testimonials" },
 		],
 	},
