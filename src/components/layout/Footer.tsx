@@ -1,79 +1,8 @@
-import {
-	Facebook,
-	Instagram,
-	Linkedin,
-	Twitter,
-	Youtube,
-} from "lucide-react"; // Importe os ícones das redes sociais
 import Image from "next/image";
 import Link from "next/link";
+import { navLinks, socialLinks } from "@/config/footer";
 
 const Footer = () => {
-	// Dados para as colunas de links
-	const navLinks = [
-		{
-			title: "SpeakUp",
-			links: [
-				{ name: "Sobre Nós", href: "/#" },
-				{ name: "Professores", href: "/#" },
-				{ name: "Metodologia", href: "/#" },
-				{ name: "Depoimentos", href: "/#" },
-			],
-		},
-		{
-			title: "Cursos",
-			links: [
-				{
-					name: "Inglês para Crianças",
-					href: "/#",
-				},
-				{
-					name: "Inglês para Adolescentes",
-					href: "/#",
-				},
-				{
-					name: "Inglês para Adultos",
-					href: "/#",
-				},
-				{
-					name: "Preparatório TOEFL/IELTS",
-					href: "/#",
-				},
-			],
-		},
-		{
-			title: "Suporte",
-			links: [
-				{ name: "FAQ", href: "/faq" },
-				{ name: "Contato", href: "/#" },
-				{
-					name: "Política de Privacidade",
-					href: "/#",
-				},
-				{ name: "Termos de Uso", href: "/#" },
-			],
-		},
-	];
-
-	// Dados para as redes sociais
-	const socialLinks = [
-		{
-			name: "Facebook",
-			icon: Facebook,
-			href: "#",
-		},
-		{
-			name: "Instagram",
-			icon: Instagram,
-			href: "#",
-		},
-		{
-			name: "YouTube",
-			icon: Youtube,
-			href: "#",
-		},
-	];
-
 	return (
 		<footer className="py-16 px-4 md:px-8 lg:px-16">
 			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-28">
